@@ -32,6 +32,7 @@ resource "aws_iam_role" "default" {
   count              = var.enabled ? 1 : 0
   name               = module.codepipeline_assume_role_label.id
   assume_role_policy = data.aws_iam_policy_document.assume_role.json
+  permissions_boundary = var.permissions_boundary == "" ? null : var.permissions_boundary
 }
 
 data "aws_iam_policy_document" "assume_role" {

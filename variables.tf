@@ -193,3 +193,9 @@ variable "s3_bucket_force_destroy" {
   description = "A boolean that indicates all objects should be deleted from the CodePipeline artifact store S3 bucket so that the bucket can be destroyed without error"
   default     = false
 }
+
+variable "permissions_boundary" {
+  type        = string
+  description = "A permissions boundary ARN to apply to the roles that are created."
+  default     = ""
+}
