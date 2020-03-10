@@ -195,6 +195,7 @@ module "codebuild" {
   github_token          = var.github_oauth_token
   environment_variables = var.environment_variables
   badge_enabled         = var.badge_enabled
+  permissions_boundary  = var.permissions_boundary
 }
 
 resource "aws_iam_role_policy_attachment" "codebuild_s3" {
