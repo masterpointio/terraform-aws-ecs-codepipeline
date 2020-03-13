@@ -44,9 +44,9 @@ variable "ecs_cluster_name" {
   description = "ECS Cluster Name"
 }
 
-variable "service_name" {
-  type        = string
-  description = "ECS Service Name"
+variable "service_names" {
+  type        = list(string)
+  description = "ECS Services to deploy to. At least one required."
 }
 
 variable "github_oauth_token" {
